@@ -1,16 +1,32 @@
-# This is a sample Python script.
+"""
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+Задание 1.
 
+Спортсмен занимается ежедневными пробежками.
+В первый день его результат составил a километров.
+Каждый день спортсмен увеличивал результат на 10 % относительно предыдущего.
+Требуется определить номер дня,
+на который результат спортсмена составит не менее b километров.
+Программа должна принимать значения параметров a и b
+и выводить одно натуральное число — номер дня.
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+Например: a = 2, b = 3.
+Результат:
+1-й день: 2
+2-й день: 2,2
+3-й день: 2,42
+4-й день: 2,66
+5-й день: 2,93
+6-й день: 3,22
+Ответ: на 6-й день спортсмен достиг результата — не менее 3 км.
+"""
 
+a = int(input('Введите результат первого для пробежки: '))
+b = int(input('Введите необходимый результат: '))
+day = 1
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+while a != b and a < b:
+    a = a + a / 10
+    day += 1
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(f'На {day} день спортсмен достигнет необходимого результата')
